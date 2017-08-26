@@ -15,6 +15,6 @@ namespace BusTicket.Models
         public Localizacion Destino { get; set; }
         public Localizacion Salida { get; set; }
         public DateTime Fecha { get; set; }
-    }
+    
     }
 }

@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BusTicket"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Aplicación" Height="350" Width="525">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Tickes para Viajes" VerticalAlignment="Top" Height="82" Width="497" FontSize="18" FontWeight="Bold"/>
+        <TabControl HorizontalAlignment="Left" Height="234" Margin="10,75,0,0" VerticalAlignment="Top" Width="497">
+            <TabItem Header="Reserva">
+                <StackPanel Orientation="Vertical" >
+                    <Label Content="Origen"></Label>
+                    <ComboBox x:Name="Origen"></ComboBox>
+                    <Label Content="Destino"></Label>
+                    <ComboBox x:Name="Destino"></ComboBox>
+                    <Label Content="Fecha"></Label>
+                    <DatePicker x:Name="Fecha"></DatePicker>
+                    <Button></Button>
+                    <ListView></ListView>
+                </StackPanel>
+                
+            </TabItem>
+            <TabItem Header="TabItem">
+                <StackPanel Orientation="Horizontal" Background="#FFE5E5E5">
+                    <Button></Button>
+                    <Button></Button>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </Window>
