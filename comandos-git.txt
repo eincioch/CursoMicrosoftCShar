@@ -1,0 +1,54 @@
+
+COMPUTO@E301-PC07 MINGW32 /
+$ cd /c/
+
+COMPUTO@E301-PC07 MINGW32 /c
+$ cd works
+bash: cd: works: No such file or directory
+
+COMPUTO@E301-PC07 MINGW32 /c
+$ mkdir works
+
+COMPUTO@E301-PC07 MINGW32 /c
+$ cd works
+
+COMPUTO@E301-PC07 MINGW32 /c/works
+$ git clone https://github.com/eincioch/CursoMicrosoftCShar.git
+Cloning into 'CursoMicrosoftCShar'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+
+COMPUTO@E301-PC07 MINGW32 /c/works
+$ ls
+CursoMicrosoftCShar/
+
+COMPUTO@E301-PC07 MINGW32 /c/works
+$ cd CursoMicrosoftCshar
+
+COMPUTO@E301-PC07 MINGW32 /c/works/CursoMicrosoftCshar (master)
+$ notepad readme.md
+
+COMPUTO@E301-PC07 MINGW32 /c/works/CursoMicrosoftCshar (master)
+$ git add -A
+
+COMPUTO@E301-PC07 MINGW32 /c/works/CursoMicrosoftCshar (master)
+$ git config --global user.email "enrique.incio@gmail.com"
+
+COMPUTO@E301-PC07 MINGW32 /c/works/CursoMicrosoftCshar (master)
+$ git config --global user.name "Enrique Incio"
+
+COMPUTO@E301-PC07 MINGW32 /c/works/CursoMicrosoftCshar (master)
+$ git commit -m "Primer commit"
+[master 5953d81] Primer commit
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+
+COMPUTO@E301-PC07 MINGW32 /c/works/CursoMicrosoftCshar (master)
+$ git push
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 306 bytes | 306.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/eincioch/CursoMicrosoftCShar.git
+   cbb268b..5953d81  master -> master
