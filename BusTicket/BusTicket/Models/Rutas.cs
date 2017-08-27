@@ -14,5 +14,10 @@ namespace BusTicket.Models
         public Guid Id { get; set; }
         public DateTime FechaInicio { get; set; }
         public DateTime FechaFin { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Chofer}-{Compania}{FechaInicio} / {FechaFin}";
+        }
     }
 }

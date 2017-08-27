@@ -23,6 +23,7 @@ namespace BusTicket
     {
         public Reserva Reserva { get; set; }
         public List<Rutas> Rutas { get; set; }
+        public List<Rutas> Resultados { get; set; }
         public List<Localizacion> Estaciones { get; set; }
         
 
@@ -41,9 +42,9 @@ namespace BusTicket
                     Estacion = "trujillo Central",
                     Estado = "Trujillo",
                     Pais = "Peru",
-                },
-
+                }
             };
+
             Reserva = new Reserva()
             {
                 Destino = Estaciones[0],
@@ -62,11 +63,11 @@ namespace BusTicket
                     Id = Guid.NewGuid()
                 },
                 new Rutas(){
-                    Chofer  = "XY",
+                    Chofer  = "XX",
                     Compania  = "L",
                     Estaciones = Estaciones,
-                    FechaInicio = DateTime.Now.AddDays(2),
-                    FechaFin= DateTime.Now ,
+                    FechaInicio = DateTime.Now.AddDays(10),
+                    FechaFin= DateTime.Now.AddDays(12) ,
                     Id = Guid.NewGuid()
                 }
 
@@ -75,11 +76,30 @@ namespace BusTicket
             InitializeComponent();
 
             this.Origen.ItemsSource = Estaciones;
-            Origen.SelectedItem = Reserva.Salida;
+            this.Origen.SelectedItem = Reserva.Salida;
             this.Destino.ItemsSource = Estaciones;
-            Destino.SelectedItem = Reserva.Destino;
+            this.Destino.SelectedItem = Reserva.Destino;
             this.Fecha.SelectedDate = Reserva.Fecha;
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            BuscarViaje(Reserva);
+        }
+
+        public void BuscarViaje(Reserva reserva) {
+            //modo explicito
+            /*var query = from ruta in Rutas
+                        where ruta.Estaciones.Contains(reserva.Destino) &&
+                                ruta.Estaciones.Contains(reserva.Salida) &&
+                                ruta.FechaInicio >= reserva.Fecha
+                        select ruta;*/
+            //modo implicito
+            var query = Rutas.Where(g => true).Select(g => g);
+
+            Resultados = query.ToList();
+            LVResultados.ItemsSource = Resultados;
         }
     }
 }
